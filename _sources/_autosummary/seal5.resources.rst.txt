@@ -1,0 +1,13 @@
+seal5.resources
+===============
+
+.. automodule:: seal5.resources
+
+   
+.. rubric:: Modules
+
+.. autosummary::
+   :toctree:
+   :recursive:
+
+   resources

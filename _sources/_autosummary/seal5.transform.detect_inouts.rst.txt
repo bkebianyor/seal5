@@ -1,0 +1,14 @@
+seal5.transform.detect\_inouts
+==============================
+
+.. automodule:: seal5.transform.detect_inouts
+
+   
+.. rubric:: Modules
+
+.. autosummary::
+   :toctree:
+   :recursive:
+
+   collect
+   visitor

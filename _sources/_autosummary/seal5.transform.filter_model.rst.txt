@@ -1,0 +1,13 @@
+seal5.transform.filter\_model
+=============================
+
+.. automodule:: seal5.transform.filter_model
+
+   
+.. rubric:: Modules
+
+.. autosummary::
+   :toctree:
+   :recursive:
+
+   filter

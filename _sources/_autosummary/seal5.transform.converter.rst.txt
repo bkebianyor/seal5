@@ -1,0 +1,15 @@
+seal5.transform.converter
+=========================
+
+.. automodule:: seal5.transform.converter
+
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      convert_attrs
+      get_parser
+      main
+      run
+   

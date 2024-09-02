@@ -1,0 +1,22 @@
+seal5.backends
+==============
+
+.. automodule:: seal5.backends
+
+   
+.. rubric:: Modules
+
+.. autosummary::
+   :toctree:
+   :recursive:
+
+   coredsl2
+   llvmir
+   patterngen
+   riscv_features
+   riscv_gisel_legalizer
+   riscv_instr_info
+   riscv_isa_info
+   riscv_register_info
+   viewer_seal5
+   yaml

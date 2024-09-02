@@ -1,0 +1,14 @@
+seal5.transform.collect\_raises
+===============================
+
+.. automodule:: seal5.transform.collect_raises
+
+   
+.. rubric:: Modules
+
+.. autosummary::
+   :toctree:
+   :recursive:
+
+   collect
+   visitor

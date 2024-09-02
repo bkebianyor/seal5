@@ -1,0 +1,12 @@
+seal5.backends.patterngen.writer
+================================
+
+.. automodule:: seal5.backends.patterngen.writer
+
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      main
+   

@@ -1,0 +1,28 @@
+﻿seal5
+=====
+
+.. automodule:: seal5
+
+   
+.. rubric:: Modules
+
+.. autosummary::
+   :toctree:
+   :recursive:
+
+   backends
+   cli
+   dependencies
+   flow
+   index
+   logging
+   model
+   pass_list
+   passes
+   resources
+   settings
+   tools
+   transform
+   types
+   utils
+   version

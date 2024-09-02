@@ -1,0 +1,25 @@
+seal5.passes
+============
+
+.. automodule:: seal5.passes
+
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      check_filter
+      filter_passes
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      PassFormat
+      PassManager
+      PassResult
+      PassScope
+      PassStatus
+      PassType
+      Seal5Pass
+   

@@ -1,0 +1,14 @@
+seal5.transform.infer\_types
+============================
+
+.. automodule:: seal5.transform.infer_types
+
+   
+.. rubric:: Modules
+
+.. autosummary::
+   :toctree:
+   :recursive:
+
+   transform
+   visitor

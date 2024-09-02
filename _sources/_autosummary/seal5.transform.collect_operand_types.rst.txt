@@ -1,0 +1,14 @@
+seal5.transform.collect\_operand\_types
+=======================================
+
+.. automodule:: seal5.transform.collect_operand_types
+
+   
+.. rubric:: Modules
+
+.. autosummary::
+   :toctree:
+   :recursive:
+
+   collect
+   visitor

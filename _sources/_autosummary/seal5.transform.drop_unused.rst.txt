@@ -1,0 +1,14 @@
+seal5.transform.drop\_unused
+============================
+
+.. automodule:: seal5.transform.drop_unused
+
+   
+.. rubric:: Modules
+
+.. autosummary::
+   :toctree:
+   :recursive:
+
+   optimizer
+   track_uses

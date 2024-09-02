@@ -1,0 +1,14 @@
+seal5.transform.eliminate\_mod\_rfs
+===================================
+
+.. automodule:: seal5.transform.eliminate_mod_rfs
+
+   
+.. rubric:: Modules
+
+.. autosummary::
+   :toctree:
+   :recursive:
+
+   transform
+   visitor

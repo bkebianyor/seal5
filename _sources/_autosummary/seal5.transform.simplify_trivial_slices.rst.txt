@@ -1,0 +1,14 @@
+seal5.transform.simplify\_trivial\_slices
+=========================================
+
+.. automodule:: seal5.transform.simplify_trivial_slices
+
+   
+.. rubric:: Modules
+
+.. autosummary::
+   :toctree:
+   :recursive:
+
+   transform
+   visitor
