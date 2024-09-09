@@ -102,12 +102,11 @@ jobs:
       if: ${{ github.event_name == 'repository_dispatch' }}
       with:
         name: riscv-core-dsl-files
-        github-token: ${{ secrets.REPO_PA_TOKEN }}
+        github-token: ${{ secrets.REPO_ACCESS_TOKEN }}
         repository: bkebianyor/riscv-coredsl-extensions
         run-id: ${{ github.event.client_payload.run_id }}
    
     - name: Trigger ETISS-RISCV-EXAMPLE Build
-    # Only Trigger ETISS if Workflow is NOT triggered by Riscv-CoreDSL-Extensions
       uses: peter-evans/repository-dispatch@v3
       if: ${{ github.event_name != 'repository_dispatch' }}    
       with:
