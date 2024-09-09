@@ -24,19 +24,27 @@ on:
   repository_dispatch:
     types: [s4e_cdl_event]
   workflow_dispatch:
-     inputs:
+    inputs:
       script:
         description: "Script"
         required: true
-        default: "demo.py"
+        default: "s4e_demo.py"
       verbose:
         description: "Verbose (0/1)"
         required: true
         default: "0"
-      fast:
-        description: "Fast (0/1)"
+      progress:
+        description: "Enable progress bars (0/1)"
         required: true
-        default: "0"
+        default: "1"
+      clone_depth:
+        description: "Clone Depth (-1 for full clone)"
+        required: true
+        default: "1"
+      # fast:
+      #   description: "Fast (0/1)"
+      #   required: true
+      #   default: "0"
       ignore_error:
         description: "Ignore Errors in TEST stage (0/1)"
         required: true
@@ -45,6 +53,22 @@ on:
         description: "Build Config (debug/release/...)"
         required: true
         default: "release"
+      test:
+        description: "Run LLVM tests"
+        required: true
+        default: "1"
+      install:
+        description: "Install LLVM (and upload as artifact)"
+        required: true
+        default: "1"
+      deploy:
+        description: "Install LLVM Sources (and upload as artifact)"
+        required: true
+        default: "1"
+      export:
+        description: "Install Seal5 Artifacts (and upload as artifact)"
+        required: true
+        default: "1"
 # push:
 #   branches:
 #     - main
@@ -84,13 +108,17 @@ jobs:
     - name: Run the demo
       run: |
         source .venv/bin/activate
-        VERBOSE=0 FAST=0 BUILD_CONFIG=release IGNORE_ERROR=1 DEST=/tmp/seal5_llvm python examples/s4e_demo.py
-        # Check how to populate these values
-#        VERBOSE=${{ github.event.inputs.verbose }} FAST=${{ github.event.inputs.fast }} BUILD_CONFIG=${{ github.event.inputs.build_config }} IGNORE_ERROR=${{ github.event.inputs.ignore_error }} DEST=/tmp/seal5_llvm python examples/${{ github.event.inputs.script }}
+        VERBOSE=${{ github.event.inputs.verbose }} PROGESS=${{ github.event.inputs.progress }} CLONE_DEPTH=${{ github.event.inputs.clone_depth }} BUILD_CONFIG=${{ github.event.inputs.build_config }} IGNORE_ERROR=${{ github.event.inputs.ignore_error }} TEST=${{ github.event.inputs.test }} INSTALL=${{ github.event.inputs.install }} DEPLOY=${{ github.event.inputs.deploy }} EXPORT=${{ github.event.inputs.export }} DEST=/tmp/seal5_llvm ${{ steps.ctx.outputs.program }} examples/${{ github.event.inputs.script }}
     - uses: actions/upload-artifact@v4
+      if: "${{ github.event.inputs.export == '1' }}"
       with:
         name: demo-export
         path: /tmp/seal5_llvm.tar.gz
+    - uses: actions/upload-artifact@v4
+      if: "${{ github.event.inputs.install == '1' }}"
+      with:
+        name: demo-install
+        path: /tmp/seal5_llvm/.seal5/install/${{ github.event.inputs.build_config }}
         
   trigger_etiss_build:
     runs-on: ubuntu-latest
