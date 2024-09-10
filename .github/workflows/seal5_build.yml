@@ -138,7 +138,7 @@ jobs:
    
     - name: Trigger ETISS-RISCV-EXAMPLE Build
       uses: peter-evans/repository-dispatch@v3
-      if: ${{ github.event_name != 'repository_dispatch' }}    
+      #if: ${{ github.event_name != 'repository_dispatch' }}    
       with:
          token: ${{ secrets.REPO_PA_TOKEN }}
          repository: bkebianyor/etiss_riscv_examples
