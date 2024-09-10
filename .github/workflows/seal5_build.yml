@@ -140,7 +140,7 @@ jobs:
       uses: peter-evans/repository-dispatch@v3
       #if: ${{ github.event_name != 'repository_dispatch' }}    
       with:
-         token: ${{ secrets.REPO_PA_TOKEN }}
+         token: ${{ secrets.REPO_ACCESS_TOKEN }}
          repository: bkebianyor/etiss_riscv_examples
          event-type: seal5-event
          client-payload: '{"triggered_by": "${{ github.repository }}", "run_id": "${{ github.run_id }}"}'
