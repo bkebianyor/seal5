@@ -22,7 +22,7 @@ name: Usage Seal5-Build
 
 on:
   repository_dispatch:
-    types: [s4e_cdl_event]
+    types: [s4e-cdl-event]
   workflow_dispatch:
     inputs:
       script:
