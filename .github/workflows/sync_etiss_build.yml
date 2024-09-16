@@ -11,7 +11,8 @@ jobs:
       
     - name: Get ETISS Build Run-ID & Run-Result
       run: |
-        echo ${{ github.event.client_payload.run-id }} > etiss_run-id.txt
+        echo ' ETISS RUN-ID:' ${{ github.event.client_payload.run_id }} 
+        echo ${{ github.event.client_payload.run_id }} > etiss_run-id.txt
 
     - name: Upload compiled ETISS
       uses: actions/upload-artifact@v4
