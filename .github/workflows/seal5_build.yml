@@ -131,10 +131,10 @@ jobs:
       # Only download artifacts if Workflow is triggered by Riscv-CoreDSL-Extensions
       if: ${{ github.event_name == 'repository_dispatch' }}
       with:
-        name: riscv-core-dsl-files
+        name: etiss-run-id
         github-token: ${{ secrets.REPO_ACCESS_TOKEN }}
-        repository: bkebianyor/riscv-coredsl-extensions
-        run-id: ${{ github.event.client_payload.run_id }}
+        repository: bkebianyor/seal5
+        path: /home/runner/work/
    
     - name: Trigger ETISS-RISCV-EXAMPLE Build
       uses: peter-evans/repository-dispatch@v3
@@ -143,7 +143,7 @@ jobs:
          token: ${{ secrets.REPO_ACCESS_TOKEN }}
          repository: bkebianyor/etiss_riscv_examples
          event-type: seal5-event
-         client-payload: '{"triggered_by": "${{ github.repository }}", "run_id": "${{ github.run_id }}"}'
+         client-payload: '{"triggered_by": "${{ github.repository }}", "etiss_run_id": "${{ cat /home/runner/work/etiss-run-id }}"}'
         # client-payload: '{"github": ${{ toJson(github) }}}'    
     
         
