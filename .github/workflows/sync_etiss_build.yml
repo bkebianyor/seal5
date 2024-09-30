@@ -12,13 +12,13 @@ jobs:
     - name: Get ETISS Build Run-ID & Run-Result
       run: |
         echo ' ETISS RUN-ID:' ${{ github.event.client_payload.run_id }} 
-        echo ${{ github.event.client_payload.run_id }} > etiss_run-id.txt
+        echo ${{ github.event.client_payload.run_id }} > etiss-run-id.txt
 
     - name: Upload compiled ETISS
       uses: actions/upload-artifact@v4
       with:
         name: etiss-run-id
-        path: etiss_run-id.txt
+        path: etiss-run-id.txt
    
     - name: Download ETISS RISCV Examples Artifact
       uses: actions/download-artifact@v4
