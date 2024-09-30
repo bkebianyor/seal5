@@ -29,5 +29,5 @@ jobs:
 
     - name: Print out ID
       run: | 
-        cat /home/runner/work/etiss_run-id.txt
+        cat /home/runner/work/etiss-run-id.txt
     
