@@ -121,20 +121,23 @@ jobs:
      # with:
      #   name: demo-install
       #  path: /tmp/seal5_llvm/.seal5/install/${{ github.event.inputs.build_config }}
-        
-  trigger_etiss_build:
+
+
+
+  trigger_etiss_example_build:
     runs-on: ubuntu-latest
     needs: build_demo
     steps:
-    - name: Download Core-DSL-Extension Artifacts
-      uses: actions/download-artifact@v4
-      # Only download artifacts if Workflow is triggered by Riscv-CoreDSL-Extensions
-      if: ${{ github.event_name == 'repository_dispatch' }}
+    - name: Download ETISS RUN-ID Artifacts
+      id: download-artifact
+      uses: dawidd6/action-download-artifact@v6
       with:
         name: etiss-run-id
         github-token: ${{ secrets.REPO_ACCESS_TOKEN }}
         repository: bkebianyor/seal5
         path: /home/runner/work/
+        workflow: sync_etiss_build.yml
+        workflow_conclusion: success
         
     - name: Set ETISS RUN-ID as Variable
       run: |
@@ -152,3 +155,5 @@ jobs:
         # client-payload: '{"github": ${{ toJson(github) }}}'    
     
         
+        
+ 
