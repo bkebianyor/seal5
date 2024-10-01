@@ -142,7 +142,7 @@ jobs:
     - name: Set ETISS RUN-ID as Variable
       run: |
         ETISS_RUN-ID=$(cat /home/runner/work/etiss-run-id.txt)
-        echo "ETISS_RUN_ID=$ETISS_RUN-ID" >> $GITHUB_ENV
+        echo $ETISS_RUN-ID 
 
     - name: Trigger ETISS-RISCV-EXAMPLE Build
       uses: peter-evans/repository-dispatch@v3
@@ -151,7 +151,7 @@ jobs:
          token: ${{ secrets.REPO_ACCESS_TOKEN }}
          repository: bkebianyor/etiss_riscv_examples
          event-type: seal5-event
-         client-payload: '{"triggered_by": "${{ github.repository }}", "etiss_run_id": "${{ env.ETISS_RUN_ID  }}"}'
+         client-payload: '{"triggered_by": "${{ github.repository }}", "etiss_run_id": "${{ ETISS_RUN_ID  }}"}'
         # client-payload: '{"github": ${{ toJson(github) }}}'    
     
         
