@@ -151,7 +151,7 @@ jobs:
          token: ${{ secrets.REPO_ACCESS_TOKEN }}
          repository: bkebianyor/etiss_riscv_examples
          event-type: seal5-event
-         client-payload: '{"triggered_by": "${{ github.repository }}", "etiss_run_id": "${{ $(cat /home/runner/work/etiss-run-id.txt)  }}"}'
+         client-payload: '{"triggered_by": "${{ github.repository }}", "etiss_run_id": "${{ env.ETISS_RUN_ID }}"}'
         # client-payload: '{"github": ${{ toJson(github) }}}'    
     
         
