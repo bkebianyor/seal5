@@ -137,12 +137,12 @@ jobs:
         workflow_conclusion: success
         
     - name: Set ETISS RUN-ID as Variable
+      shell: bash
       run: |
-        echo ${{ env.ETISS_RUN_ID }}
         ETISS_RUN_ID=$(cat /home/runner/work/etiss-run-id.txt)
+        echo "ETISS_RUN_ID=$ETISS_RUN_ID" >> $GITHUB_ENV
+        echo ${{ env.ETISS_RUN_ID }}
         echo $ETISS_RUN_ID 
-      env:
-        ETISS_RUN_ID: $ETISS_RUN_ID
       
     - name: Trigger ETISS-RISCV-EXAMPLE Build
       uses: peter-evans/repository-dispatch@v3
