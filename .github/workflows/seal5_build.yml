@@ -138,9 +138,11 @@ jobs:
         
     - name: Set ETISS RUN-ID as Variable
       run: |
-        echo $ETISS_RUN-ID 
+        echo $ETISS_RUN_ID 
+        echo env.ETISS_RUN_ID
+        ETISS_RUN_ID=$(cat /home/runner/work/etiss-run-id.txt)
       env:
-        ETISS_RUN-ID: $(cat /home/runner/work/etiss-run-id.txt)
+        ETISS_RUN_ID: $ETISS_RUN_ID
       
     - name: Trigger ETISS-RISCV-EXAMPLE Build
       uses: peter-evans/repository-dispatch@v3
