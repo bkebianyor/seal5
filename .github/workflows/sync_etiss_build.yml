@@ -1,4 +1,4 @@
-isname: Sync ETISS Build
+name: Sync ETISS Build
 
 on:
   repository_dispatch:
