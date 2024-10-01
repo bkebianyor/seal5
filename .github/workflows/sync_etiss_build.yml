@@ -1,4 +1,4 @@
-name: Sync ETISS Build
+isname: Sync ETISS Build
 
 on:
   repository_dispatch:
@@ -11,8 +11,10 @@ jobs:
       
     - name: Get ETISS Build Run-ID & Run-Result
       run: |
-        echo ' ETISS RUN-ID:' ${{ github.event.client_payload.run_id }} 
-        echo ${{ github.event.client_payload.run_id }} > etiss-run-id.txt
+        echo ' ETISS RUN-ID:' ${{ github.event.client-payload.etiss-run-id }} 
+        echo ' ETISS PARENT RUN-ID:' ${{ github.event.clientp-ayload.parent-repo-run-id }} 
+        echo ' SEAL5 RUN-ID:' ${{ github.event.client-payload.trigger-repo-run-id }}
+        echo ${{ github.event.client-payload.run-id }} > etiss-run-id.txt
 
     - name: Upload compiled ETISS
       uses: actions/upload-artifact@v4
