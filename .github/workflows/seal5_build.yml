@@ -138,9 +138,9 @@ jobs:
         
     - name: Set ETISS RUN-ID as Variable
       run: |
-        echo $ETISS_RUN_ID 
-        echo env.ETISS_RUN_ID
+        echo ${{ env.ETISS_RUN_ID }}
         ETISS_RUN_ID=$(cat /home/runner/work/etiss-run-id.txt)
+        echo $ETISS_RUN_ID 
       env:
         ETISS_RUN_ID: $ETISS_RUN_ID
       
