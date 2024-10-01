@@ -70,9 +70,6 @@ on:
         required: true
         default: "1"
 
-env:
-  ETISS_RUN_ID: ""
-
 jobs:            
   build_demo:
     runs-on: ubuntu-latest
@@ -151,7 +148,7 @@ jobs:
          token: ${{ secrets.REPO_ACCESS_TOKEN }}
          repository: bkebianyor/etiss_riscv_examples
          event-type: seal5-event
-         client-payload: '{"triggered_by": "${{ github.repository }}", "etiss_run_id": "${{ env.ETISS_RUN_ID }}"}'
+         client-payload: '{"triggered-by": "${{ github.repository }}", "etiss-run-id": "${{ env.ETISS_RUN_ID }}"}'
         # client-payload: '{"github": ${{ toJson(github) }}}'    
     
         
