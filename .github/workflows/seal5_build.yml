@@ -69,12 +69,9 @@ on:
         description: "Install Seal5 Artifacts (and upload as artifact)"
         required: true
         default: "1"
-# push:
-#   branches:
-#     - main
-# pull_request:
-#   branches:
-#     - main   
+
+env:
+  ETISS_RUN_ID: ""
 
 jobs:            
   build_demo:
