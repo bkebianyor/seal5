@@ -12,7 +12,7 @@ jobs:
     - name: Get ETISS Build Run-ID & Run-Result
       run: |
         echo ' ETISS RUN-ID:' ${{ github.event.client-payload.etiss_run_id }} 
-        echo ' ETISS PARENT RUN-ID:' ${{ github.event.clientp-ayload.parent_repo_run_id }} 
+        echo ' ETISS PARENT RUN-ID:' ${{ github.event.client-payload.parent_repo_run_id }} 
         echo ' SEAL5 RUN-ID:' ${{ github.event.client-payload.trigger_repo_run_id }}
         echo ${{ github.event.client-payload.etiss_run_id }} > etiss-run-id.txt
 
